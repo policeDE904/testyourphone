@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTuTu - Браузерний аналог AnTuTu Benchmark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📱</div>
+            <h1>WebTuTu Benchmark</h1>
+            <p class="subtitle">Комплексний тест продуктивності вашого пристрою</p>
+            
+            <div class="device-info-grid">
+                <div class="info-card">
+                    <div>Процесор</div>
+                    <div class="info-value" id="infoCpu">...</div>
+                </div>
+                <div class="info-card">
+                    <div>Пам'ять</div>
+                    <div class="info-value" id="infoMemory">...</div>
+                </div>
+                <div class="info-card">
+                    <div>Браузер</div>
+                    <div class="info-value" id="infoBrowser">...</div>
+                </div>
+                <div class="info-card">
+                    <div>Платформа</div>
+                    <div class="info-value" id="infoPlatform">...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CPU Test -->
+        <div class="test-category">
+            <div class="test-header">
+                <div class="test-title">
+                    <span class="test-icon">⚡</span>
+                    CPU Тест
+                </div>
+                <div class="status-badge status-waiting" id="statusCpu">Очікує</div>
+            </div>
+            <div class="test-progress">
+                <div class="progress-fill" id="progressCpu"></div>
+            </div>
+            <div class="test-details">
+                <span>Тестування: <span id="detailCpu">Очікує запуску</span></span>
+                <span>Бали: <span id="scoreCpu">0</span></span>
+            </div>
+        </div>
+
+        <!-- GPU Test -->
+        <div class="test-category">
+            <div class="test-header">
+                <div class="test-title">
+                    <span class="test-icon">🎮</span>
+                    GPU Тест
+                </div>
+                <div class="status-badge status-waiting" id="statusGpu">Очікує</div>
+            </div>
+            <div class="test-progress">
+                <div class="progress-fill" id="progressGpu"></div>
+            </div>
+            <div class="test-details">
+                <span>Тестування: <span id="detailGpu">Очікує запуску</span></span>
+                <span>Бали: <span id="scoreGpu">0</span></span>
+            </div>
+        </div>
+
+        <!-- Memory Test -->
+        <div class="test-category">
+            <div class="test-header">
+                <div class="test-title">
+                    <span class="test-icon">💾</span>
+                    Memory Тест
+                </div>
+                <div class="status-badge status-waiting" id="statusMemory">Очікує</div>
+            </div>
+            <div class="test-progress">
+                <div class="progress-fill" id="progressMemory"></div>
+            </div>
+            <div class="test-details">
+                <span>Тестування: <span id="detailMemory">Очікує запуску</span></span>
+                <span>Бали: <span id="scoreMemory">0</span></span>
+            </div>
+        </div>
+
+        <!-- UX Test -->
+        <div class="test-category">
+            <div class="test-header">
+                <div class="test-title">
+                    <span class="test-icon">📊</span>
+                    UX Тест
+                </div>
+                <div class="status-badge status-waiting" id="statusUx">Очікує</div>
+            </div>
+            <div class="test-progress">
+                <div class="progress-fill" id="progressUx"></div>
+            </div>
+            <div class="test-details">
+                <span>Тестування: <span id="detailUx">Очікує запуску</span></span>
+                <span>Бали: <span id="scoreUx">0</span></span>
+            </div>
+        </div>
+
+        <button class="btn" id="startTest">🚀 Запустити повний тест</button>
+
+        <div class="thermal-warning">
+            ⚠️ Під час тесту пристрій може нагріватися
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h2>🏆 Результати тестування</h2>
+            <div class="final-score" id="finalScore">0</div>
+            <div class="ranking" id="ranking">Обчислюємо рейтинг...</div>
+            
+            <div class="score-breakdown">
+                <div class="score-item">
+                    <div>CPU</div>
+                    <div class="score-value" id="breakdownCpu">0</div>
+                </div>
+                <div class="score-item">
+                    <div>GPU</div>
+                    <div class="score-value" id="breakdownGpu">0</div>
+                </div>
+                <div class="score-item">
+                    <div>Memory</div>
+                    <div class="score-value" id="breakdownMemory">0</div>
+                </div>
+                <div class="score-item">
+                    <div>UX</div>
+                    <div class="score-value" id="breakdownUx">0</div>
+                </div>
+            </div>
+
+            <div class="comparison-chart" id="comparisonChart">
+                <!-- Chart will be generated by JavaScript -->
+            </div>
+
+            <button class="btn" id="shareBtn">📤 Поділитися результатами</button>
+            <button class="btn secondary" id="retryBtn">🔄 Перетестувати</button>
+        </div>
+    </div>
+
+    
+    <script src="benchmark.js"></script>
+    <script src="cpu-test.js"></script>
+    <script src="gpu-test.js"></script>
+    <script src="memory-test.js"></script>
+    <script src="ux-test.js"></script>
+</body>
+</html>
